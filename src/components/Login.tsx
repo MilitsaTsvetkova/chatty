@@ -2,12 +2,11 @@
 
 import { Button } from '@mui/material'
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth'
-import { useAuthUser } from '../hooks/useAuthUser'
 import { auth } from '../utils/firebase'
 
 const Login = () => {
   const [signInWithGoogle] = useSignInWithGoogle(auth)
-  useAuthUser()
+
   return (
     <div className='app'>
       <div className='login'>
