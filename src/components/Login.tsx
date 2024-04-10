@@ -1,6 +1,11 @@
+'use client'
+
 import { Button } from '@mui/material'
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth'
+import { auth } from '../utils/firebase'
 
 const Login = () => {
+  const [signInWithGoogle] = useSignInWithGoogle(auth)
   return (
     <div className='app'>
       <div className='login'>
@@ -10,7 +15,9 @@ const Login = () => {
           <div className='login__text'>
             <h1>Sign in to Chatty</h1>
           </div>
-          <Button>Sign in with Google</Button>
+          <Button onClick={() => signInWithGoogle()}>
+            Sign in with Google
+          </Button>
         </div>
       </div>
     </div>
